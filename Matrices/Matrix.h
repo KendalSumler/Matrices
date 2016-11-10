@@ -70,7 +70,7 @@ public:
 		Vector3D tmp = Vector3D(x * mult, y * mult, z * mult);
 		return tmp;
 	};
-	Vector3D(float x2, float y2, float z2)
+	Vector3D(float x2, float y2, float z2) //Argument Constructor
 	{
 		x2 = x;
 		y2 = y;
@@ -78,7 +78,7 @@ public:
 	}
 	Vector3D operator == (Vector3D & other)
 	{
-		Vector3D * tmp = new  Vector3D(this->x == other.x, this->y == other.y, this->z == other.z);
+		Vector3D * tmp = new Vector3D(this->x == other.x, this->y == other.y, this->z == other.z);
 		return *tmp;
 	};
 	Vector3D operator + (Vector3D & other)
@@ -112,35 +112,26 @@ public:
 		Vector4D tmp = Vector4D(x * mult, y * mult, z * mult, w * mult);
 		return tmp;
 	};
-	Vector4D(float x2, float y2, float z2, float w2)
+	Vector4D(float x2, float y2, float z2, float w2) //Argument Constructor
 	{
 		x2 = x;
 		y2 = y;
 		z2 = z;
 		w2 = w;
 	}
-	bool operator == (Vector4D & yes)
+	Vector4D operator == (Vector4D & other)
 	{
-		if (x == yes.x && y == yes.y && z == yes.z && w == yes.w)
-		{
-			return true;
-		}
-		return false;
+		Vector4D *tmp = new Vector4D(this->x == other.x, this->y == other.y, this->z == other.z, this->w == other.w);
+		return *tmp;
 	};
-	bool operator + (Vector4D & yes)
+	Vector4D operator + (Vector4D & other)
 	{
-		if (x + yes.x && y + yes.y && z + yes.z && w + yes.w)
-		{
-			return true;
-		}
-		return false;
+		Vector4D *tmp = new Vector4D(this->x + other.x, this->y + other.y, this->z + other.z, this->w + other.w);
+		return *tmp;
 	};
-	bool operator - (Vector4D & yes)
+	Vector4D operator - (Vector4D & other)
 	{
-		if (x - yes.x && y - yes.y && z - yes.z && w - yes.w)
-		{
-			return true;
-		}
-		return false;
-	}
+		Vector4D *tmp = new Vector4D(this->x - other.x, this->y - other.y, this->z - other.z, this->w + other.w);
+		return *tmp;
+	};
 };
